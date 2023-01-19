@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "../styles/audioPlayer.module.css";
+import { saveAs } from "file-saver";
 
 const AudioPlayer = () => {
   // state
@@ -24,11 +25,6 @@ const AudioPlayer = () => {
     return `${returnedMinutes} : ${returnedSeconds}`;
   };
 
-  // toggles
-  const toggleDownloadStatus = () => {
-    setIsDownloading(!isDownloading);
-  };
-
   const togglePlayPause = () => {
     const prevValue = isPlaying;
     setIsPlaying(!prevValue);
@@ -42,6 +38,15 @@ const AudioPlayer = () => {
   const whilePlaying = () => {
     progressBar.current.value = audioPlayer.current.currentTime;
     changePlayerCurrentTime();
+  };
+  // download file function
+
+  const saveFile = () => {
+    saveAs(
+      "https://res.cloudinary.com/dye2elyds/video/upload/v1673963371/Listening%20Practice/080108-005_fb0pfn.wav",
+      "track.wav"
+    );
+    setIsDownloading(!isDownloading);
   };
   return (
     <div className={styles.main}>
@@ -73,8 +78,12 @@ const AudioPlayer = () => {
               {calculateTime(currentTime)} / {calculateTime(duration)}
             </div>
 
-            <button onClick={toggleDownloadStatus} className={styles.pause}>
-              {isDownloading ? "downloading" : "download"}
+            <button
+              onClick={saveFile}
+              href="https://res.cloudinary.com/dye2elyds/video/upload/v1673963371/Listening%20Practice/080108-005_fb0pfn.wav"
+              className={styles.pause}
+            >
+              {isDownloading ? "downloaded" : "download"}
             </button>
           </div>
         </div>
