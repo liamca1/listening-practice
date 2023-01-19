@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "Helvetica";
+  src: url("../public/Helvetica-01.ttf");
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-helvetica: Helvetica;
+
+  /* font sizes */
+  --font-size-sm: 10px;
+  --font-size-base: 14px;
+  --font-size-lg: 20px;
+  --font-size-xl: 36px;
+
+  /* Colors */
+  --color-black: #000;
+  --color-white: #fff;
+  --color-selected: rgb(248, 113, 113);
+
+  /* Background Gradient */
+  --background-gradient-color: rgb(16, 185, 129);
+  --background-gradient-image: radial-gradient(
+      at 67% 81%,
+      rgb(229, 231, 235) 0,
+      transparent 22%
+    ),
+    radial-gradient(at 68% 49%, rgb(20, 83, 45) 0, transparent 67%),
+    radial-gradient(at 2% 79%, rgb(22, 101, 52) 0, transparent 69%),
+    radial-gradient(at 49% 24%, rgb(248, 113, 113) 0, transparent 50%),
+    radial-gradient(at 25% 49%, rgb(255, 228, 230) 0, transparent 69%),
+    radial-gradient(at 65% 68%, rgb(192, 38, 211) 0, transparent 80%);
+
+  /* Gaps */
+  --gap-md: 30px;
+
+  /* Paddings */
+  --padding-sm: 4px;
+  --padding-md: 11px;
+  --padding-lg: 13px;
+}
